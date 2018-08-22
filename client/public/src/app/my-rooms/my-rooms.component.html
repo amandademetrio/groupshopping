@@ -1,0 +1,71 @@
+<div class="row mt-3">
+
+  <div class="col-4 ml-4">
+    <h3 class="pink_title text-center">Rooms You've Created</h3>
+    <div *ngFor="let room of all_rooms.reverse()" class="card text-white mb-3 blue_room">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-7">
+              <h5 class="card-title">{{room.name}}</h5>
+              <div *ngIf="room.joined_by.length == 0; else joined" class="card-text">Members: No members have joined</div>
+              <ng-template #joined>
+                  <div class="card-text">Members:
+                    <ul class="list-group">
+                      <li *ngFor="let member of room.joined_by">{{member.name}} </li>
+                    </ul>
+                  </div>
+              </ng-template>
+          </div>
+          <div class="col-5">
+              <button class="btn btn-light float-right" [routerLink]="['/rooms',room._id]">Go!</button>
+              <button class="btn btn-light float-right mt-2" [routerLink]="['/add_friends',room._id]">Add Friends</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+      <h3 class="pink_title text-center">Rooms By Friends</h3>
+      <div *ngFor="let roomj of joined_rooms.reverse()" class="card text-white mb-3 blue_room">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-7">
+              <h5 class="card-title">{{roomj.name}}</h5>
+              <div *ngIf="roomj.joined_by.length == 0; else joinedj" class="card-text">Members: No members have joined</div>
+              <ng-template #joinedj>
+                <div class="card-text">Members:
+                  <ul class="list-group">
+                    <li *ngFor="let memberj of roomj.joined_by">{{memberj.name}} </li>
+                  </ul>
+                </div>
+              </ng-template>
+          </div>
+          <div class="col-5">
+              <button class="btn btn-light float-right" [routerLink]="['/rooms',roomj._id]">Go!</button>
+              <button class="btn btn-light float-right mt-2" [routerLink]="['/add_friends',roomj._id]">Add Friends</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="col-3">
+      <h3 class="pink_title text-center">Create New Room</h3>
+      <div class="card mb-3 yellow_room" style="max-width: 18rem;">
+          <div class="card-body">
+            <form (submit)="createRoom()">
+                <div class="form-group">
+                    <label>Room Name:</label>
+                    <input type="text" class="form-control" name="new_room.name" [(ngModel)]="new_room.name">
+                </div>
+                <button type="submit" class="btn float-right btn-light">Create</button>
+            </form>
+          </div>
+    </div>
+  </div>
+
+
+</div>

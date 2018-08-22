@@ -1,0 +1,43 @@
+<div class="row mt-3">
+  <div class="col-8 ml-4">
+
+    <div *ngIf="success_alert" class="alert alert-success" role="alert">
+      Added Friend Successfully!
+    </div>
+
+    <div *ngIf="email_error_alert" class="alert alert-danger" role="alert">
+      We couldn't find your friend in our database. Please ask them to register!
+    </div>
+
+    <div *ngIf="room_update_fail" class="alert alert-danger" role="alert">
+      Unable to add friend to room. Please try again!
+    </div>
+
+    <div class="card text-white mb-3 blue_room">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+              <h5 class="card-title">{{room.name}}</h5>
+              <div class="card-text">Members:
+                <ul>
+                  <li *ngFor="let member of room.joined_by">{{member.name}} </li>
+                </ul>
+              </div>
+              <div class="card-text mt-3">Add Member:</div>
+              <form (submit)="updateRoomInfo()">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Add friend's email address" name="new_user.email" [(ngModel)]="new_user.email">
+                </div>
+              <button type="submit" class="btn btn-light float-right ml-3">Send Invites</button>
+            </form>
+            <button class="btn btn-light float-right ml-3" [routerLink]="['/rooms',room_id]">Visit Room</button>
+              <button class="btn btn-light float-right" [routerLink]="['/rooms']">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

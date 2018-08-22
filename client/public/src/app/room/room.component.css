@@ -1,0 +1,33 @@
+#products_box {
+    height: 590px;
+    background: rgba(254, 254, 254, 0.7);
+}
+
+.product_image {
+    max-height: 240px;
+}
+
+.opinion_button {
+    margin: 2px;
+}
+
+.watching_box {
+    height: 220px;
+    overflow: scroll;
+    background: rgba(254, 254, 254, 0.8);
+}
+
+.product-row {
+    height: 250px;
+}
+
+#chatbox {
+    height: 590px;
+    overflow: scroll;
+    background: rgba(254, 254, 254, 0.8);
+}
+
+.pink_button {
+    color:white;
+    background-color: #F47373
+}

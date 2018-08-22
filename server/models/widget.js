@@ -42,7 +42,7 @@ var UserSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 var RoomSchema = new mongoose.Schema({
-     name: {
+    name: {
         type: String
     },
     products:[ProductSchema],

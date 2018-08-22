@@ -1,0 +1,17 @@
+.blue_room {
+    background-color: #78BFEF;
+}
+
+.yellow_room {
+    background-color: #FCE0A2;
+    color: gray;
+}
+
+.pink_button {
+    background-color: #F47373;
+    color: white;
+}
+
+.pink_title {
+    color:#F47373;
+}

@@ -1,0 +1,82 @@
+<div class="row">
+
+  <div class="col-8 ml-3">
+    <div class="card p-3" id="products_box">
+
+          <form class="form-inline" (submit)="addProduct()">
+            <div class="form-group">
+              <label class="mr-2" (click)="openAddProduct()"><i class="fas fa-plus-circle fa-2x text-secondary"></i></label>
+              <input *ngIf="product_add" type="text" class="form-control mr-2" placeholder="Enter product link">
+            </div>
+            <button *ngIf="product_add" type="submit" class="btn pink_button">Add</button>
+          </form>
+          <hr>
+      <ul class="list-group">
+      <!-- Each product has one row like the following -->
+        <li>
+            <div class="row mb-2 product-row">
+              <div class="col-4">
+                <img src="https://images.prod.meredith.com/product/1a2b7229bda2b08533caf0c6ad28c24d/1506569403158/l/kate-spade-hop-to-it-rabbit-coin-purse-nouveaux-neutral" class="product_image">
+              </div>
+              <div class="col-3">
+                <div class="row mb-2">
+                  <h5 class="text-secondary">Hop It Rabbit Coin Purse</h5>
+                </div>
+                <div class="row mb-2">
+                    <i class="fas fa-star text-secondary"></i>
+                    <i class="fas fa-star text-secondary"></i>
+                    <i class="fas fa-star text-secondary"></i>
+                    <i class="fas fa-star text-secondary"></i>
+                  </div>
+                  <div class="row mb-2">
+                    <small class="text-secondary">$58.00</small>
+                  </div>
+                  <div class="row">
+                    <a href="/"><i class="fas fa-grin-hearts fa-2x opinion_button"></i></a>
+                    <a href="/"><i class="fas fa-meh fa-2x opinion_button"></i></a>
+                    <a href="/"><i class="far fa-frown fa-2x opinion_button"></i></a>
+                  </div>
+                  <div class="row mt-1">
+                    <a href="/"><i class="fas fa-comments fa-2x "></i></a>
+                    <a href="/"><i class="fas fa-plus-circle fa-2x"></i></a>
+                    <a href="/"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                  </div>
+              </div>
+              <div class="col-2">
+              </div>
+              <div class="col-3">
+                  <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                      <i class="fas fa-eye fa-2x text-secondary"></i>
+                    </div>
+                    <div class="col-4"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 watching_box">
+                      <br>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <hr>
+        </li>
+      </ul>
+    <!-- End of product list -->
+    </div>
+  </div>
+
+  <div class="col-3">
+    <div class="card p-3" id="chatbox">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-11 ml-3">
+      <form class="mt-2 mb-2">
+          <div class="form-group">
+            <input type="range" class="form-control-range" max="100" value="100">
+          </div>
+        </form>
+  </div>
+</div>
